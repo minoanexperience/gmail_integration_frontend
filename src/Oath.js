@@ -75,7 +75,7 @@ function Auth() {
 
     const fetchApi = async (pageToken = "", currentPage = 1, code = "") => {
         try {
-            const url = "http://localhost:8000/auth"
+            const url = "https://dev-minoan-gmail.minoanexperience.com/auth"
             console.log("before call")
             console.log(paramsValue)
             const res = await axios.post(url, {

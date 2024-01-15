@@ -9,7 +9,7 @@ const GmailApiQuickstart = () => {
     const [totalRecords, setTotalRecords] = useState(0);
 
     async function handleAuthClick() {
-        const url = "http://localhost:8000/authorize"
+        const url = "https://dev-minoan-gmail.minoanexperience.com/authorize"
         const response = await axios.get(url);
         console.log(response.data?.redirectUrl, "redirect_url")
 
