@@ -80,7 +80,8 @@ function Auth() {
             console.log(paramsValue)
             const res = await axios.post(url, {
                 "code": code ? code : paramsValue,
-                "pageToken": pageToken
+                "pageToken": pageToken,
+                "filter": ""
             });
             console.log(res, "response")
             if (res.status === 200) {
@@ -158,6 +159,36 @@ function Auth() {
 
         setHtmlContent(decodedBody);
     };
+    const  [toInputValue, setToInputValue] =  useState('');
+    const  [fromInputValue, setFromInputValue] =  useState('');
+
+    const  handleToChange = (event) => {
+        setToInputValue(event.target.value);
+    };
+    const handleFromChange = (event) => {
+        setFromInputValue(event.target.value);
+    }
+
+    async function handleSubmit() {
+        const url = "https://dev-minoan-gmail.minoanexperience.com/auth"
+        console.log("before call fghjrg")
+        const res = await axios.post(url, {
+            "code": "n",
+            "pageToken": "",
+            "filter": {
+                "To": toInputValue,
+                "From": fromInputValue
+            }
+        });
+        console.log(res, "response")
+        if (res.status === 200) {
+            setTabledata(res.data.list);
+            setIsLoading(false);
+            setCurrentPage(currentPage);
+            updateTableData(res);
+        }
+    }
+
 
     return (
         <>
@@ -174,6 +205,15 @@ function Auth() {
 
                 </div>
 
+            </div>
+            <div>
+                    <label>To:
+                        <input  type="text"  value={toInputValue} onChange={handleToChange} />
+                    </label>
+                    <label>From:
+                        <input  type="text"  value={fromInputValue} onChange={handleFromChange} />
+                    </label>
+                    <button onClick={handleSubmit}>submit</button>
             </div>
            <div className={'table_outer_container'}>
                <div className={'table_inner_container'}>
