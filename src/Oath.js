@@ -198,7 +198,7 @@ function Auth() {
                 <div className={'container-fluid'}>
                     <div className={'inner_header_wrap'}>
                         <div className={'logo-wrap'}>
-                            <a href="" className={'logo-ui'}>
+                            <a href="https://minoan-gmail.minoanexperience.com/home" className={'logo-ui'}>
                                 <img src="https://dev-my.minoanexperience.com/assets/images/update-minoan_logo_green.svg" alt=""/>
                             </a>
                         </div>
