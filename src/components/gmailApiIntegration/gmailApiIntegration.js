@@ -1,59 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import {Base64} from 'js-base64';
 import axios from "axios";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const GmailApiQuickstart = () => {
     const [previousPageLink, setPreviousPageLink] = useState("")
     const [nextPageLink, setNextPageLink] = useState("")
     const [currentPage, setCurrentPage] = useState(0);
     const [totalRecords, setTotalRecords] = useState(0);
+    const [selectedMail, setSelectedMail] = useState('');
 
-    async function handleAuthClick() {
+
+    async function handleAuthClick(user_mail) {
         const url = "https://dev-minoan-gmail.minoanexperience.com/authorize"
-        const response = await axios.get(url);
+        // const url = "http://localhost:8000/authorize?email";
+        const response = await axios.post(url, {
+            "user_email": user_mail
+        });
         console.log(response.data?.redirectUrl, "redirect_url")
 
         window.location.replace(response.data?.redirectUrl)
-
-
-        // console.log(window.gapi.client.getToken(), "window.gapi.client.getToken()")
-        // if (window.gapi.client.getToken() === null) {
-        //     console.log("inside")
-        //     let token = localStorage.getItem("googleTokenClient")
-        //     console.log(token, "token")
-        //     if (token){
-        //         window.tokenClient = JSON.parse(token);
-        //         document.getElementById('signout_button').style.visibility = 'visible';
-        //         // document.getElementById('authorize_button').innerText = 'Refresh';
-        //         await listLabels();
-        //         // window.tokenClient.requestAccessToken({prompt: ''});
-        //     }else {
-        //
-        //         // Prompt the user to select a Google Account and ask for consent to share their data
-        //         // when establishing a new session.
-        //         window.tokenClient.requestAccessToken({prompt: 'consent'});
-        //     }
-        // } else {
-        //     console.log("else")
-        //     // Skip display of account chooser and consent dialog for an existing session.
-        //     document.getElementById('signout_button').style.visibility = 'visible';
-        //     // document.getElementById('authorize_button').innerText = 'Refresh';
-        //     await listLabels();
-        // }
-        //
-        // window.tokenClient.callback = async (resp) => {
-        //
-        //     if (resp.error !== undefined) {
-        //         throw (resp);
-        //     }
-        //
-        //     console.log(window.gapi.client.getToken(), "window.gapi.client.getToken() 2")
-        //     document.getElementById('signout_button').style.visibility = 'visible';
-        //     // document.getElementById('authorize_button').innerText = 'Refresh';
-        //     await listLabels();
-        //
-        //
-        // };
     }
 
 
@@ -334,6 +300,20 @@ const GmailApiQuickstart = () => {
         backgroundImage: "url('https://dev-my.minoanexperience.com/assets/images/login_ui.png')",
     }
 
+    const handleDropdownChange = async (eventKey) => {
+        // Set the selected mail when the dropdown value changes
+        setSelectedMail(eventKey);
+
+        // Call your API with the selected value
+        // Replace the following line with your actual API call
+        // Example: apiCallFunction(eventKey);
+        console.log('API call with selected value:', eventKey);
+        const res = await handleAuthClick(eventKey);
+        console.log(res);
+
+    };
+
+
     return (
         <>
             <div>
@@ -351,11 +331,27 @@ const GmailApiQuickstart = () => {
                                     </div>
                                 </div>
                                     <div className={'body_content_wrap'}>
-                                        <p className="welcom_txt">Gmail API Quickstart</p>
                                         <h3> Authorize your account.</h3>
-                                        <button className="btn_primary" id="authorize_button" onClick={handleAuthClick}>
-                                            Authorize
-                                        </button>
+                                        <Dropdown className={"cstm_dropdown"} onSelect={handleDropdownChange}>
+                                            <Dropdown.Toggle id="dropdown-basic">
+                                                Select Your Mail
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item eventKey="ally@minoanexperience.com">ally@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="sage@minoanexperience.com">sage@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="charlotte@minoanexperience.com">charlotte@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="katie@minoanexperience.com">katie@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="marc@minoanexperience.com">marc@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="natalie@minoanexperience.com">natalie@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="peter@minoanexperience.com">peter@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="suraj.singh@minoanexperience.com">suraj.singh@minoanexperience.com</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                        <p> </p>
+                                        {/*<button className="btn_primary" id="authorize_button" onClick={handleAuthClick}>*/}
+                                        {/*    Authorize*/}
+                                        {/*</button>*/}
 
                                     </div>
                             </div>

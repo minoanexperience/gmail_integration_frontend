@@ -76,6 +76,7 @@ function Auth() {
     const fetchApi = async (pageToken = "", currentPage = 1, code = "") => {
         try {
             const url = "https://dev-minoan-gmail.minoanexperience.com/auth"
+            // const url = "http://localhost:8000/auth"
             console.log("before call")
             console.log(paramsValue)
             const res = await axios.post(url, {
@@ -171,6 +172,7 @@ function Auth() {
 
     async function handleSubmit() {
         const url = "https://dev-minoan-gmail.minoanexperience.com/auth"
+        // const url = "http://localhost:8000/auth"
         console.log("before call fghjrg")
         const res = await axios.post(url, {
             "code": "n",
@@ -205,84 +207,100 @@ function Auth() {
 
                 </div>
 
+
             </div>
-            <div>
-                    <label>To:
-                        <input  type="text"  value={toInputValue} onChange={handleToChange} />
-                    </label>
-                    <label>From:
-                        <input  type="text"  value={fromInputValue} onChange={handleFromChange} />
-                    </label>
-                    <button onClick={handleSubmit}>submit</button>
-            </div>
+
+
+            {/*<div>*/}
+            {/*        <label>To:*/}
+            {/*            <input  type="text"  value={toInputValue} onChange={handleToChange} />*/}
+            {/*        </label>*/}
+            {/*        <label>From:*/}
+            {/*            <input  type="text"  value={fromInputValue} onChange={handleFromChange} />*/}
+            {/*        </label>*/}
+            {/*        <button onClick={handleSubmit}>submit</button>*/}
+            {/*</div>*/}
+
+
            <div className={'table_outer_container'}>
                <div className={'table_inner_container'}>
-                   {
-                       isLoading ? (<>Loading</>) : (
-                           <div>
-                               <Table
-                                   className='custom-table-wrap product-table'
-                                   // rowSelection={rowSelection}
-                                   onRow={(record,index)=>{
-                                       return{
-                                           onClick:(e)=> {
-                                               console.log({record,index})
-                                               console.log("working");
-                                               setShowModel(true);
-                                               getMailBody(record);
-                                           }
-                                       }
-                                   }}
-                                   columns={column}
-                                   dataSource={tabledata}
-                                   loading={isLoading}
-                                   pagination={
-                                       false
-                                   }
-                               />
 
-                               {
-                                   tabledata.length > 0 &&
-                                   (
-                                       <div>
-                                           <button onClick={() => {fetchApi(previousPageLink, currentPage - 1)}} disabled={currentPage === 1}>Previous</button>
-                                           {(
-                                               <div className='pagination_text' style={{}}>
-                                                   <span>Page {currentPage} of {Math.ceil(totalRecords / 50)}</span>
-                                               </div>
-                                           )}
-                                           <button onClick={() => {fetchApi(nextPageLink, currentPage + 1)}} disabled={currentPage === Math.ceil(totalRecords / 50)}>Next</button>
-                                       </div>
-                                   )
-                               }
+                   {
+                       isLoading ? (
+                           <div className={"loader_wrapper"}>
+                               <div className={"cstm_loader"}></div>
+                           </div>
+                       ) : (
+                           // <div>
+                           //     <Table
+                           //         className='custom-table-wrap product-table'
+                           //         // rowSelection={rowSelection}
+                           //         onRow={(record,index)=>{
+                           //             return{
+                           //                 onClick:(e)=> {
+                           //                     console.log({record,index})
+                           //                     console.log("working");
+                           //                     setShowModel(true);
+                           //                     getMailBody(record);
+                           //                 }
+                           //             }
+                           //         }}
+                           //         columns={column}
+                           //         dataSource={tabledata}
+                           //         loading={isLoading}
+                           //         pagination={
+                           //             false
+                           //         }
+                           //     />
+                           //
+                           //     {
+                           //         tabledata.length > 0 &&
+                           //         (
+                           //             <div>
+                           //                 <button onClick={() => {fetchApi(previousPageLink, currentPage - 1)}} disabled={currentPage === 1}>Previous</button>
+                           //                 {(
+                           //                     <div className='pagination_text' style={{}}>
+                           //                         <span>Page {currentPage} of {Math.ceil(totalRecords / 50)}</span>
+                           //                     </div>
+                           //                 )}
+                           //                 <button onClick={() => {fetchApi(nextPageLink, currentPage + 1)}} disabled={currentPage === Math.ceil(totalRecords / 50)}>Next</button>
+                           //             </div>
+                           //         )
+                           //     }
+                           // </div>
+                           <div className={"success_message"}>
+                               <span className={"icon"}>
+                                   <img src={"/success.gif"} alt={""}/>
+                               </span>
+                               <p>Authorization Successful</p>
                            </div>
                        )
                    }
                </div>
            </div>
 
-            <div>
-                <Modal
+            {/*<div>*/}
+            {/*    <Modal*/}
 
-                    size="lg"
-                    aria-labelledby="contained-modal-title-vcenter"
-                    centered
-                    show={showModel}
-                >
-                    <Modal.Header closeButton  onClick={closeMailClick}>
-                        {/*<Modal.Title id="contained-modal-title-vcenter">*/}
-                        {/*  Heading*/}
-                        {/*</Modal.Title>*/}
-                    </Modal.Header>
-                    <Modal.Body>
-                       <div id="modalBody" dangerouslySetInnerHTML={{ __html: htmlContent }}>
-                       </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={closeMailClick} >Close</Button>
-                    </Modal.Footer>
-                </Modal>
-            </div>
+            {/*        size="lg"*/}
+            {/*        aria-labelledby="contained-modal-title-vcenter"*/}
+            {/*        centered*/}
+            {/*        show={showModel}*/}
+            {/*    >*/}
+            {/*        <Modal.Header closeButton  onClick={closeMailClick}>*/}
+            {/*            /!*<Modal.Title id="contained-modal-title-vcenter">*!/*/}
+            {/*            /!*  Heading*!/*/}
+            {/*            /!*</Modal.Title>*!/*/}
+            {/*        </Modal.Header>*/}
+            {/*        <Modal.Body>*/}
+            {/*           <div id="modalBody" dangerouslySetInnerHTML={{ __html: htmlContent }}>*/}
+            {/*           </div>*/}
+            {/*        </Modal.Body>*/}
+            {/*        <Modal.Footer>*/}
+            {/*            <Button onClick={closeMailClick} >Close</Button>*/}
+            {/*        </Modal.Footer>*/}
+            {/*    </Modal>*/}
+            {/*</div>*/}
         </>
     )
 }
