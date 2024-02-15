@@ -345,7 +345,7 @@ const GmailApiQuickstart = () => {
                                                 <Dropdown.Item eventKey="marc@minoanexperience.com">marc@minoanexperience.com</Dropdown.Item>
                                                 <Dropdown.Item eventKey="natalie@minoanexperience.com">natalie@minoanexperience.com</Dropdown.Item>
                                                 <Dropdown.Item eventKey="peter@minoanexperience.com">peter@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="suraj.singh@minoanexperience.com">suraj.singh@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="orders@minoanexperience.com">orders@minoanexperience.com</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <p> </p>
