@@ -350,7 +350,7 @@ const GmailApiQuickstart = () => {
                                                 <Dropdown.Item eventKey="hello@minoanexperience.com">hello@minoanexperience.com</Dropdown.Item>
                                                 <Dropdown.Item eventKey="marketing@minoanexperience.com">marketing@minoanexperience.com</Dropdown.Item>
                                                 <Dropdown.Item eventKey="partnerships@minoanexperience.com">partnerships@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="suraj.singh@minoanexperience.com">orders@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="suraj.singh@minoanexperience.com">suraj.singh@minoanexperience.com</Dropdown.Item>
                                                 <Dropdown.Item eventKey="">Other</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
