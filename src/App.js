@@ -8,7 +8,7 @@ function App() {
   return (
       <Router>
           <Routes>
-              <Route path={'/home'} element={<GmailApiIntegration/>} />
+              <Route path={'/'} element={<GmailApiIntegration/>} />
               <Route path={'/auth'} element={<Auth/>} />
               <Route path={'/success'} element={<SuccessLogin/>}/>
           </Routes>

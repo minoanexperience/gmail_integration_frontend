@@ -338,14 +338,20 @@ const GmailApiQuickstart = () => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item eventKey="ally@minoanexperience.com">ally@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="sage@minoanexperience.com">sage@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="charlotte@minoanexperience.com">charlotte@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="katie@minoanexperience.com">katie@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="marc@minoanexperience.com">marc@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="natalie@minoanexperience.com">natalie@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="peter@minoanexperience.com">peter@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="orders@minoanexperience.com">orders@minoanexperience.com</Dropdown.Item>
+                                                {/*<Dropdown.Item eventKey="ally@minoanexperience.com">ally@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="sage@minoanexperience.com">sage@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="charlotte@minoanexperience.com">charlotte@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="katie@minoanexperience.com">katie@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="marc@minoanexperience.com">marc@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="natalie@minoanexperience.com">natalie@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="peter@minoanexperience.com">peter@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="orders@minoanexperience.com">orders@minoanexperience.com</Dropdown.Item>*/}
+                                                <Dropdown.Item eventKey="mikki@minoanexperience.com">mikki@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="hello@minoanexperience.com">hello@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="marketing@minoanexperience.com">marketing@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="partnerships@minoanexperience.com">partnerships@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="suraj.singh@minoanexperience.com">orders@minoanexperience.com</Dropdown.Item>
+                                                <Dropdown.Item eventKey="">Other</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <p> </p>
