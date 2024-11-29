@@ -349,7 +349,7 @@ const GmailApiQuickstart = () => {
                                                 {/*<Dropdown.Item eventKey="mikki@minoanexperience.com">mikki@minoanexperience.com</Dropdown.Item>*/}
                                                 {/*<Dropdown.Item eventKey="hello@minoanexperience.com">hello@minoanexperience.com</Dropdown.Item>*/}
                                                 {/*<Dropdown.Item eventKey="marketing@minoanexperience.com">marketing@minoanexperience.com</Dropdown.Item>*/}
-                                                <Dropdown.Item eventKey="tara@minoanexperience.com.">tara@minoanexperience.com.</Dropdown.Item>
+                                                <Dropdown.Item eventKey="tara@minoanexperience.com">tara@minoanexperience.com.</Dropdown.Item>
                                                 {/*<Dropdown.Item eventKey="suraj.singh@minoanexperience.com">suraj.singh@minoanexperience.com</Dropdown.Item>*/}
                                                 {/*<Dropdown.Item eventKey="">Other</Dropdown.Item>*/}
                                             </Dropdown.Menu>
