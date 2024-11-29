@@ -346,10 +346,10 @@ const GmailApiQuickstart = () => {
                                                 {/*<Dropdown.Item eventKey="natalie@minoanexperience.com">natalie@minoanexperience.com</Dropdown.Item>*/}
                                                 {/*<Dropdown.Item eventKey="peter@minoanexperience.com">peter@minoanexperience.com</Dropdown.Item>*/}
                                                 {/*<Dropdown.Item eventKey="orders@minoanexperience.com">orders@minoanexperience.com</Dropdown.Item>*/}
-                                                <Dropdown.Item eventKey="mikki@minoanexperience.com">mikki@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="hello@minoanexperience.com">hello@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="marketing@minoanexperience.com">marketing@minoanexperience.com</Dropdown.Item>
-                                                <Dropdown.Item eventKey="partnerships@minoanexperience.com">partnerships@minoanexperience.com</Dropdown.Item>
+                                                {/*<Dropdown.Item eventKey="mikki@minoanexperience.com">mikki@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="hello@minoanexperience.com">hello@minoanexperience.com</Dropdown.Item>*/}
+                                                {/*<Dropdown.Item eventKey="marketing@minoanexperience.com">marketing@minoanexperience.com</Dropdown.Item>*/}
+                                                <Dropdown.Item eventKey="tara@minoanexperience.com.">tara@minoanexperience.com.</Dropdown.Item>
                                                 {/*<Dropdown.Item eventKey="suraj.singh@minoanexperience.com">suraj.singh@minoanexperience.com</Dropdown.Item>*/}
                                                 {/*<Dropdown.Item eventKey="">Other</Dropdown.Item>*/}
                                             </Dropdown.Menu>
